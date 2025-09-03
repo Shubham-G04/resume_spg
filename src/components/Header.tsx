@@ -52,8 +52,8 @@ const Header = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="/resume.pdf"
-              download
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              download="resume.pdf"
               className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 text-sm font-medium"
             >
               <Download className="w-4 h-4 mr-2" />
