@@ -2,10 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title>Redirecting...</title>
     <script type="text/javascript">
-      // Redirect to index.html so React Router can handle the route
-      var redirectTo = window.location.protocol + "//" + window.location.host + "/resume_spg/index.html" + window.location.search + window.location.hash;
-      window.location.replace(redirectTo);
+      (function() {
+        var path = window.location.pathname.replace("/resume_spg", ""); // remove repo base
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+
+        // Build redirect with original path info
+        var newUrl = "/resume_spg/index.html?redirect=" + encodeURIComponent(path + search + hash);
+        window.location.replace(newUrl);
+      })();
     </script>
   </head>
   <body></body>
